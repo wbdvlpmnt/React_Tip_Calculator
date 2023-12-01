@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BillAmount />
+      <ReusableTip />
+      <ReusableTip />
+      <h1>You pay $92 ($80+$12 tip)</h1>
+      <button>Reset</button>
     </div>
   );
 }
 
+function BillAmount() {
+  return (
+    <div>
+      <span>How much was the bill? </span>
+      <input />
+    </div>
+  );
+}
+
+function ReusableTip() {
+  return (
+    <div>
+      <span>How did you like the service? </span>
+      <input />
+    </div>
+  );
+}
 export default App;
