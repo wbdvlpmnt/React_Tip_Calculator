@@ -4,8 +4,8 @@ function App() {
   return (
     <div>
       <BillAmount />
-      <ReusableTip />
-      <ReusableTip />
+      <ReusableTip>How did you like the service? </ReusableTip>
+      <ReusableTip>How did your friend like the service? </ReusableTip>
       <h1>You pay $92 ($80+$12 tip)</h1>
       <button>Reset</button>
     </div>
@@ -21,10 +21,10 @@ function BillAmount() {
   );
 }
 
-function ReusableTip() {
+function ReusableTip({ children }) {
   return (
     <div>
-      <span>How did you like the service? </span>
+      <span>{children}</span>
       <input />
     </div>
   );
