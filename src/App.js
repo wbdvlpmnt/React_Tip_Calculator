@@ -24,6 +24,12 @@ function App() {
     setBillAmount(billAmount);
   }
 
+  function handleReset() {
+    setFriendSatisfaction("not satisfied, 10%");
+    setYourSatisfaction("not satisfied, 10%");
+    setBillAmount(0);
+  }
+
   function onChangeSatisfaction(satisfactionValue, prompt) {
     if (prompt === "How did you like the service?") {
       setYourSatisfaction(satisfactionValue);
@@ -55,7 +61,7 @@ function App() {
         You pay ${totalAmount} (${billAmount}+$
         {totalTip} tip)
       </h1>
-      <button>Reset</button>
+      <button onClick={() => handleReset()}>Reset</button>
     </div>
   );
 }
