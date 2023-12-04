@@ -3,7 +3,6 @@ import "./App.css";
 
 function App() {
   const [billAmount, setBillAmount] = useState(0);
-  const [satisfaction, setSatisfaction] = useState("");
   const [friendSatisfaction, setFriendSatisfaction] =
     useState("not satisfied, 10%");
   const [yourSatisfaction, setYourSatisfaction] =
@@ -31,11 +30,16 @@ function App() {
   }
 
   function onChangeSatisfaction(satisfactionValue, prompt) {
-    if (prompt === "How did you like the service?") {
-      setYourSatisfaction(satisfactionValue);
-    }
-    if (prompt === "How did your friend like the service?") {
-      setFriendSatisfaction(satisfactionValue);
+    const expr = prompt;
+    switch (expr) {
+      case "How did you like the service?":
+        setYourSatisfaction(satisfactionValue);
+        break;
+      case "How did your friend like the service?":
+        setFriendSatisfaction(satisfactionValue);
+        break;
+      default:
+        break;
     }
   }
 
